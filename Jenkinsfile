@@ -12,7 +12,11 @@ node {
         }
         post {
             always {
-                junit 'test-reports/results.xml'
+                try {
+                    junit 'test-reports/results.xml'
+                } catch (error) {
+                    echo "Failed to publish JUnit test results: ${error}"
+                }
             }
         }
     }
