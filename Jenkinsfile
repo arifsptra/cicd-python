@@ -49,5 +49,17 @@ pipeline {
                 }
             }
         }
+        stage('Manual Approval') {
+            agent any
+            steps {
+                input message: 'Lanjutkan ke tahap Deploy?', ok: 'Proceed', submitter: 'user1,user2'
+            }
+        }
+        stage('Deploy') {
+            agent any
+            steps {
+                echo 'Deploying...'
+            }
+        }
     }
 }
