@@ -59,6 +59,8 @@ pipeline {
             agent any
             steps {
                 echo 'Deploying...'
+                sleep 1m
+                echo 'Good Bye...'
             }
         }
     }
