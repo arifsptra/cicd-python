@@ -59,7 +59,7 @@ pipeline {
             agent any
             steps {
                 echo 'Deploying...'
-                sleep 1m
+                sleep time: 1, unit: 'MINUTES'
                 echo 'Good Bye...'
             }
         }
